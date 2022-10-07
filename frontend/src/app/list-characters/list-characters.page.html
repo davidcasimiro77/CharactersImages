@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Character List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let c of characters">
+      <ion-avatar slot="start">
+        <img *ngIf="c.filename" src="http://localhost:8080/images/{{c.filename}}" alt="image" />
+      </ion-avatar>
+      <ion-label>
+        <h1>{{c.alias}}</h1>
+        <p>{{c.real_name}}</p>
+        <p>{{c.rol}}</p>
+        <p>{{c.status}}</p>
+        <p>{{c.origin}}</p>
+      </ion-label>
+
+    </ion-item>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addCharacter()">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
